@@ -134,6 +134,11 @@ body {
       line-height: 16px;
       color: rgba(0, 0, 0, 0.5);
 
+      &:hover {
+         color: #43B6FE;
+         transition: all 0.3s;
+      }
+
       &--active {
          color: black;
 
@@ -230,7 +235,7 @@ body {
    position: relative;
    width: 100%;
    padding: 90px 0px 155px;
-   background-image: url(../images/hero-bg.png);
+   background-image: url(../images/hero-bg.webp);
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center center;
@@ -551,7 +556,7 @@ body {
       &::before {
          content: '';
          position: absolute;
-         background-image: url(../images/phone.png);
+         background-image: url(../images/phone.webp);
          background-repeat: no-repeat;
          width: 26px;
          height: 26px;
@@ -565,7 +570,6 @@ body {
             height: 20px;
             background-size: cover;
          }
-
       }
    }
 
@@ -763,6 +767,11 @@ body {
          font-size: 39px;
       }
 
+
+   }
+
+   &__title-blue-word {
+      color: rgba(62, 186, 254, 1);
    }
 
    &__cards {

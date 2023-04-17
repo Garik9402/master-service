@@ -27,7 +27,7 @@ import terser from "gulp-terser";
 
 //img
 import gulpimage from "gulp-image";
-
+import imagewebp from 'gulp-webp';
 
 let dev = false;
 
@@ -39,6 +39,7 @@ const path = {
       scss: "src/scss/styles.scss",
       js: "src/js/script.js",
       img: "src/images/**/*.{jpg,svg,png,jpeg,gif}",
+      webpim: "src/images/*.{jpg,png,}",
       fonts: "src/fonts/**/*.*",
    },
 
@@ -48,6 +49,7 @@ const path = {
       css: "dist/css/",
       js: "dist/js/",
       img: "dist/images/",
+      webpim: "dist/images/",
       fonts: "dist/fonts/",
    },
 
@@ -57,6 +59,7 @@ const path = {
       scss: "src/scss/styles.scss",
       js: "src/js/**/*.*",
       img: "src/images/**/*.{jpg,svg,png,jpeg,gif,webp}",
+      webpim: "src/images/*.{jpg,png,}",
    },
 };
 
@@ -146,7 +149,17 @@ export const js = () => {
       .pipe(gulp.dest(path.dist.js));
 };
 
-
+export const webpImg = () => {
+   return gulp
+      .src(path.src.webpim)
+      .pipe(imagewebp())
+      .pipe(gulp.dest(path.dist.img))
+      .pipe(
+         browserSync.stream({
+            once: true,
+         })
+      );
+}
 export const image = () => {
    return gulp
       .src(path.src.img)
@@ -202,6 +215,7 @@ export const server = () => {
    gulp.watch(path.watch.scss, scss);
    gulp.watch(path.watch.js, js);
    gulp.watch(path.watch.img, image);
+   gulp.watch(path.watch.webpim, image);
    gulp.watch(path.src.fonts, copy);
 };
 const clear = () => {
@@ -214,6 +228,6 @@ let develope = (ready) => {
    ready();
 };
 
-export const base = gulp.parallel(html, scss, js, image, copy);
+export const base = gulp.parallel(html, scss, js, image, webpImg, copy);
 export const build = gulp.series(clear, base);
 export default gulp.series(develope, base, server);
