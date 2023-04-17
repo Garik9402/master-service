@@ -1,0 +1,86 @@
+.block-data {
+   background-color: white;
+
+   &__top {
+      margin-bottom: 30px;
+
+      @include mq (lg) {
+         margin-bottom: 20px;
+      }
+   }
+
+   &__middle {
+      margin-bottom: 30px;
+   }
+
+   &__bottom {}
+
+   &__title {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 33px;
+      color: #000000;
+      margin-bottom: 10px;
+
+
+      @media (max-width:1050px) {
+         font-size: 26px;
+         line-height: 30px;
+
+      }
+
+      @media (max-width:955px) {
+         font-size: 24px;
+         line-height: 28px;
+
+      }
+
+      @include mq (lg) {
+         font-size: 22px;
+         line-height: 26px;
+         text-align: center;
+      }
+   }
+
+   &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 23px;
+      color: rgba(0, 0, 0, 0.5);
+
+      &--indent {
+         margin-bottom: 10px;
+      }
+
+      @include mq (lg) {
+         text-align: center;
+      }
+   }
+
+   &__tel {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      color: rgba(62, 186, 254, 1);
+      text-decoration: none;
+
+      @include mq (lg) {
+         font-size: 20px;
+         display: flex;
+         justify-content: center;
+      }
+   }
+
+
+}
+
+.form {
+
+   &__input-box {}
+
+   &__input {}
+
+   &__btn {}
+}
+
+.btn {}

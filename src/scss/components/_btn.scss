@@ -1,0 +1,18 @@
+.btn {
+   width: 100%;
+   background: linear-gradient(90deg, #4FACFE 0%, #00F2FE 100%);
+   border-radius: 6px;
+   padding: 26px 0px 25px;
+   cursor: pointer;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 19px;
+   color: #FFFFFF;
+   border: none;
+
+
+   @include mq (lg) {
+      padding: 15px 20px;
+
+   }
+}

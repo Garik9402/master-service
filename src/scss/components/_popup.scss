@@ -1,0 +1,181 @@
+.popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   z-index: 40;
+   background: rgba(48, 9, 97, .3);
+   -webkit-backdrop-filter: blur(7.5px);
+   backdrop-filter: blur(7.5px);
+   visibility: hidden;
+   opacity: 0;
+
+   &--open {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.3s ease;
+   }
+
+   &--open &__inner {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.2s ease;
+
+   }
+
+   &__inner {
+      position: relative;
+      max-width: 493px;
+      width: 100%;
+      padding: 0 20px;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      visibility: hidden;
+      opacity: 0;
+
+   }
+
+   &__btn-close {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 35px;
+      top: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      @include mq (lg) {
+         top: 9px;
+         right: 30px;
+      }
+   }
+
+   & .form {
+      &__input {
+         margin-bottom: 8.66px;
+
+         &::placeholder {
+            font-size: 13.8545px;
+            line-height: 16px;
+         }
+
+         @include mq (lg) {
+            padding: 15px 30px 15px 40px;
+            margin-bottom: 8px;
+         }
+      }
+
+      &__input-box {
+         position: relative;
+
+         &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../images/phone.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 22.51px;
+            height: 22.51px;
+            left: 19.5px;
+            top: 50%;
+            transform: translateY(-76%);
+
+            @include mq (lg) {
+               width: 20px;
+               height: 20px;
+               left: 10px;
+            }
+         }
+      }
+
+      &__btn {
+         padding: 22.51px 0px 22.1px;
+         font-size: 13.8545px;
+         line-height: 16px;
+
+         @include mq (lg) {
+            padding: 15px 20px;
+         }
+      }
+   }
+
+   & .block-data {
+      padding: 53px 36px;
+      box-shadow: 0px 25.8165px 43.0275px rgba(126, 143, 160, 0.2);
+      border-radius: 13.7688px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include mq (lg) {
+         padding: 40px 20px;
+      }
+
+      &__top {
+         margin-bottom: 25.81px;
+      }
+
+      &__middle {
+         width: 100%;
+         margin-bottom: 25.98px;
+      }
+
+      &__title {
+         font-size: 24.2455px;
+         line-height: 28px;
+         text-align: center;
+
+         @include mq (lg) {
+            font-size: 22px;
+            line-height: 26px;
+         }
+      }
+
+      &__text {
+         text-align: center;
+         font-size: 13.8545px;
+         line-height: 20px;
+
+         &--indent {
+            margin-bottom: 8.58px;
+         }
+      }
+
+      &__tel {
+         display: block;
+         width: 100%;
+         text-align: center;
+         font-size: 20.7818px;
+         line-height: 24px;
+
+         @include mq (lg) {
+            font-size: 18px;
+         }
+      }
+   }
+}
+
+.block-data {
+   &__top {}
+
+   &__title {}
+
+   &__text {}
+
+   &__middle {}
+
+   &__form {}
+
+   &__bottom {}
+
+   &__text--indent {}
+
+   &__tel {}
+}

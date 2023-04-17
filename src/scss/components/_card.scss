@@ -1,0 +1,189 @@
+.card {
+   width: 100%;
+   padding: 10px 40px 10px 10px;
+   background: #FFFFFF;
+   border: 1px solid rgba(43, 50, 71, 0.08);
+   border-radius: 10px;
+   cursor: pointer;
+
+   @include mq(xl) {
+      padding: 0px 10px 30px;
+   }
+
+   @include mq (lg) {
+      width: 100%;
+      padding: 10px 40px 10px 10px;
+   }
+
+   @include mq (md) {
+      padding: 10px 10px 30px;
+   }
+
+
+   &:not(:last-child) {
+      margin-bottom: 10px;
+   }
+
+   &:hover {
+      background: #FFFFFF;
+      box-shadow: 0px 30px 50px rgba(126, 143, 160, 0.2);
+      border-radius: 10px;
+   }
+
+
+
+   &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include mq(xl) {
+         flex-direction: column;
+         align-items: center;
+      }
+
+      @include mq (lg) {
+         flex-direction: row;
+      }
+
+      @include mq (md) {
+         flex-direction: column;
+      }
+
+   }
+
+   &__img {
+      @include mq(xl) {
+         width: 100px;
+         height: 100px;
+         margin-bottom: 10px;
+      }
+
+      @include mq (lg) {
+         margin-bottom: 0;
+         width: 80px;
+         height: 80px;
+      }
+   }
+
+   &__desc {
+      max-width: 270px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include mq(xl) {
+         margin-bottom: 50px;
+      }
+
+      @include mq(lg) {
+
+         margin-bottom: 0px;
+      }
+
+      @include mq (md) {
+         margin-bottom: 40px;
+      }
+
+   }
+
+   &__title {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 33px;
+      color: #000000;
+      margin-bottom: 16px;
+
+      @include mq(xl) {
+         font-size: 24px;
+         line-height: 30px;
+         text-align: center;
+         margin-bottom: 10px;
+      }
+
+      @include mq(lg) {
+         font-size: 20px;
+         line-height: 26px;
+      }
+
+   }
+
+   &__desc-bottom {
+      max-width: 200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include mq(xl) {
+         text-align: center;
+         flex-direction: column;
+         justify-content: space-between;
+         height: 50px;
+
+      }
+
+      @include mq(lg) {
+         text-align: center;
+         flex-direction: row;
+         justify-content: space-between;
+         height: auto;
+         max-width: 180px;
+         width: 100%;
+      }
+
+      @include mq(md) {
+         text-align: center;
+         flex-direction: column;
+         justify-content: space-between;
+         height: 50px;
+      }
+   }
+
+   &__text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: rgba(0, 0, 0, 0.5);
+
+      @include mq(lg) {
+         font-size: 13px;
+      }
+
+   }
+
+   &__circle {
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(90deg, #4FACFE 0%, #00F2FE 100%);
+      border-radius: 50%;
+   }
+
+   &__btn {
+      width: 100px;
+      height: 30px;
+      left: 1405px;
+      top: 1330px;
+      border: 2px solid #3EBAFE;
+      border-radius: 1000px;
+      background-color: transparent;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 7px 22px;
+
+      &:hover {
+         background: linear-gradient(90deg, #4FACFE 0%, #00F2FE 100%);
+         border: none;
+         color: #FFFFFF;
+         transition: all 0.3s ease;
+      }
+   }
+}
